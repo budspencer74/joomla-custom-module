@@ -1,0 +1,26 @@
+.video-hero {
+    min-height: 70vh;
+}
+
+.video-hero__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.video-hero__content {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    padding: 8rem 0 4rem;
+}

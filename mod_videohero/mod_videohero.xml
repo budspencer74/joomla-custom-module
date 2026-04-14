@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>MOD_VIDEOHERO</name>
+    <author>Your Name</author>
+    <creationDate>April 2026</creationDate>
+    <copyright>(C) 2026 Open Source Matters, Inc.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>you@example.com</authorEmail>
+    <authorUrl>https://example.com</authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_VIDEOHERO_XML_DESCRIPTION</description>
+    <namespace path="src">Joomla\Module\VideoHero</namespace>
+
+    <files>
+        <filename module="mod_videohero">mod_videohero.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <folder>language</folder>
+        <folder>media</folder>
+    </files>
+
+    <languages>
+        <language tag="en-GB">language/en-GB/mod_videohero.ini</language>
+        <language tag="en-GB">language/en-GB/mod_videohero.sys.ini</language>
+        <language tag="de-DE">language/de-DE/mod_videohero.ini</language>
+        <language tag="de-DE">language/de-DE/mod_videohero.sys.ini</language>
+    </languages>
+
+    <media destination="mod_videohero" folder="media">
+        <folder>css</folder>
+    </media>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic" label="MOD_VIDEOHERO_FIELDSET_BASIC">
+                <field
+                    name="headline"
+                    type="text"
+                    label="MOD_VIDEOHERO_HEADLINE_LABEL"
+                    description="MOD_VIDEOHERO_HEADLINE_DESC"
+                    filter="string"
+                />
+
+                <field
+                    name="subline"
+                    type="text"
+                    label="MOD_VIDEOHERO_SUBLINE_LABEL"
+                    description="MOD_VIDEOHERO_SUBLINE_DESC"
+                    filter="string"
+                />
+
+                <field
+                    name="introtext"
+                    type="editor"
+                    label="MOD_VIDEOHERO_INTROTEXT_LABEL"
+                    description="MOD_VIDEOHERO_INTROTEXT_DESC"
+                    buttons="true"
+                    hide="readmore,pagebreak"
+                    filter="JComponentHelper::filterText"
+                />
+
+                <field
+                    name="linka_text"
+                    type="text"
+                    label="MOD_VIDEOHERO_LINKA_TEXT_LABEL"
+                    description="MOD_VIDEOHERO_LINKA_TEXT_DESC"
+                    filter="string"
+                />
+
+                <field
+                    name="linka_url"
+                    type="url"
+                    label="MOD_VIDEOHERO_LINKA_URL_LABEL"
+                    description="MOD_VIDEOHERO_LINKA_URL_DESC"
+                    filter="url"
+                />
+
+                <field
+                    name="linkb_text"
+                    type="text"
+                    label="MOD_VIDEOHERO_LINKB_TEXT_LABEL"
+                    description="MOD_VIDEOHERO_LINKB_TEXT_DESC"
+                    filter="string"
+                />
+
+                <field
+                    name="linkb_url"
+                    type="url"
+                    label="MOD_VIDEOHERO_LINKB_URL_LABEL"
+                    description="MOD_VIDEOHERO_LINKB_URL_DESC"
+                    filter="url"
+                />
+
+                <field
+                    name="background_video"
+                    type="media"
+                    label="MOD_VIDEOHERO_BACKGROUND_VIDEO_LABEL"
+                    description="MOD_VIDEOHERO_BACKGROUND_VIDEO_DESC"
+                    directory="images/video"
+                    preview="false"
+                    types="mp4,webm,ogg"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

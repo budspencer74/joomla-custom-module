@@ -56,7 +56,7 @@
                     description="MOD_VIDEOHERO_INTROTEXT_DESC"
                     buttons="true"
                     hide="readmore,pagebreak"
-                    filter="JComponentHelper::filterText"
+                    filter="\Joomla\CMS\Component\ComponentHelper::filterText"
                 />
 
                 <field

@@ -96,9 +96,10 @@
                     type="media"
                     label="MOD_VIDEOHERO_BACKGROUND_MEDIA_LABEL"
                     description="MOD_VIDEOHERO_BACKGROUND_MEDIA_DESC"
-                    directory="images/video"
+                    directory="images"
                     preview="false"
-                    types="mp4,webm,ogg,jpg,jpeg,png,webp"
+                    types="images,videos"
+                    extensions="jpg,jpeg,png,webp,mp4,webm,ogg"
                 />
             </fieldset>
         </fields>

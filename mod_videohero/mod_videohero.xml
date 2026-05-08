@@ -56,7 +56,7 @@
                     description="MOD_VIDEOHERO_INTROTEXT_DESC"
                     buttons="true"
                     hide="readmore,pagebreak"
-                    filter="\Joomla\CMS\Component\ComponentHelper::filterText"
+                    filter="JComponentHelper::filterText"
                 />
 
                 <field
@@ -92,13 +92,14 @@
                 />
 
                 <field
-                    name="background_video"
+                    name="background_media"
                     type="media"
-                    label="MOD_VIDEOHERO_BACKGROUND_VIDEO_LABEL"
-                    description="MOD_VIDEOHERO_BACKGROUND_VIDEO_DESC"
-                    directory="images/video"
+                    label="MOD_VIDEOHERO_BACKGROUND_MEDIA_LABEL"
+                    description="MOD_VIDEOHERO_BACKGROUND_MEDIA_DESC"
+                    directory="images"
                     preview="false"
-                    types="mp4,webm,ogg"
+                    types="images,videos"
+                    extensions="jpg,jpeg,png,webp,mp4,webm,ogg"
                 />
             </fieldset>
         </fields>

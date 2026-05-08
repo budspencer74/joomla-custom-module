@@ -24,3 +24,13 @@
     color: #fff;
     padding: 8rem 0 4rem;
 }
+
+
+.video-hero__image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}

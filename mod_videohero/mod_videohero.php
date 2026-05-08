@@ -19,7 +19,7 @@ $linkAText = (string) $params->get('linka_text', '');
 $linkAUrl = (string) $params->get('linka_url', '');
 $linkBText = (string) $params->get('linkb_text', '');
 $linkBUrl = (string) $params->get('linkb_url', '');
-$backgroundVideo = (string) $params->get('background_video', '');
+$backgroundMedia = (string) $params->get('background_media', '');
 
 HTMLHelper::_('stylesheet', 'mod_videohero/style.css', ['version' => 'auto', 'relative' => true]);
 

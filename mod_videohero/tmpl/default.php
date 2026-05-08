@@ -8,7 +8,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
 
-$videoPath = $backgroundVideo !== '' ? htmlspecialchars($backgroundVideo, ENT_QUOTES, 'UTF-8') : '';
+$backgroundPath = $backgroundMedia !== '' ? htmlspecialchars($backgroundMedia, ENT_QUOTES, 'UTF-8') : '';
 $headlineText = htmlspecialchars($headline, ENT_QUOTES, 'UTF-8');
 $sublineText = htmlspecialchars($subline, ENT_QUOTES, 'UTF-8');
 $linkATextEscaped = htmlspecialchars($linkAText, ENT_QUOTES, 'UTF-8');
@@ -16,16 +16,31 @@ $linkAUrlEscaped = htmlspecialchars($linkAUrl, ENT_QUOTES, 'UTF-8');
 $linkBTextEscaped = htmlspecialchars($linkBText, ENT_QUOTES, 'UTF-8');
 $linkBUrlEscaped = htmlspecialchars($linkBUrl, ENT_QUOTES, 'UTF-8');
 
-if ($videoPath !== '') {
-    $videoPath = HTMLHelper::_('cleanImageURL', $videoPath)->url;
+$mediaType = null;
+
+if ($backgroundPath !== '') {
+    $backgroundPath = HTMLHelper::_('cleanImageURL', $backgroundPath)->url;
+
+    $extension = strtolower((string) pathinfo($backgroundPath, PATHINFO_EXTENSION));
+    $videoExtensions = ['mp4', 'webm', 'ogg'];
+    $imageExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+
+    if (in_array($extension, $videoExtensions, true)) {
+        $mediaType = 'video';
+    } elseif (in_array($extension, $imageExtensions, true)) {
+        $mediaType = 'image';
+    }
 }
 ?>
 <section class="video-hero position-relative overflow-hidden">
-    <?php if ($videoPath !== '') : ?>
+    <?php if ($mediaType === 'video') : ?>
         <!-- Video -->
         <video class="video-hero__video" autoplay muted loop playsinline>
-            <source src="<?php echo $videoPath; ?>" type="video/mp4">
+            <source src="<?php echo $backgroundPath; ?>" type="video/mp4">
         </video>
+    <?php elseif ($mediaType === 'image') : ?>
+        <!-- Hintergrundbild -->
+        <div class="video-hero__image" style="background-image: url('<?php echo htmlspecialchars($backgroundPath, ENT_QUOTES, 'UTF-8'); ?>');"></div>
     <?php endif; ?>
 
     <!-- Verlauf -->
